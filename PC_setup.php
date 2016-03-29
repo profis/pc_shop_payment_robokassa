@@ -19,7 +19,10 @@ function pc_shop_payment_robokassa_install($controller) {
 	$core->Set_config_if('robokassa_pass1', '', 'pc_shop_payment_robokassa');
 	$core->Set_config_if('robokassa_pass2', '', 'pc_shop_payment_robokassa');
 	$core->Set_config_if('robokassa_test', '', 'pc_shop_payment_robokassa');
-	
+
+	$core->Set_variable_if('ru', 'order_payment_description', 'Оплата заказа №{orderId}', 'pc_shop_payment_robokassa');
+	$core->Set_variable_if('en', 'order_payment_description', 'Order no. {orderId} payment', 'pc_shop_payment_robokassa');
+
 	return true;
 }
 
